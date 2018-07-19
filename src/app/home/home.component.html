@@ -1,0 +1,24 @@
+
+<div class="cointainer color-dark">
+  <div class="col">
+    <p>kommentar hinzufügen</p>
+  </div>
+  <div class="col">
+    <p>anzahl der einträge: {{ itemCount }}</p>
+  </div>
+</div>
+<div class="cointainer color-light" [@goals]="goals.length">
+  <div class="col">
+    <p class="sm">deine message an uns</p>
+
+    <form>
+      <input type="text" class="txt" name="item" placeholder="platz für einen kommentar" [(ngModel)]="goalText">
+      <input type="submit" class="btn" [value]="btnText" (click)="addItem()">
+    </form>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+      {{ goal }}
+    </p>
+  </div>
+</div>
